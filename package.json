@@ -5,7 +5,7 @@
     "url": "https://github.com/soumabhi/broschpharma.git"
   },
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "electron/main.cjs",
   "scripts": {
@@ -45,7 +45,10 @@
   "build": {
     "publish": [
       {
-        "provider": "github"
+        "provider": "github",
+        "owner": "soumabhi",
+        "repo": "broschpharma",
+        "releaseType": "release"
       }
     ],
     "appId": "com.broschpharma.inventory",
