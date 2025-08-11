@@ -1,0 +1,53 @@
+{
+  "name": "broschpharma-inventory",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && set VITE_DEV_SERVER_URL=http://localhost:5173 && electron .\"",
+    "build": "vite build",
+    "start": "electron .",
+    "dist": "npm run build && electron-builder",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^4.3.0",
+    "axios": "^1.10.0",
+    "dotenv": "^17.1.0",
+    "electron-updater": "^6.6.2",
+    "i": "^0.3.7",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
+    "lucide-react": "^0.321.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.6.2",
+    "react-toastify": "^11.0.5",
+    "recharts": "^3.1.0",
+    "typed.js": "^2.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.0",
+    "wait-on": "^8.0.4"
+  },
+  "build": {
+    "appId": "com.broschpharma.inventory",
+    "productName": "BroschPharma Inventory",
+    "icon": "src/assets/icon.ico",
+    "files": [
+      "dist/**/*",
+      "electron/main.cjs"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
