@@ -1,7 +1,11 @@
 {
   "name": "broschpharma-inventory",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soumabhi/broschpharma.git"
+  },
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "electron/main.cjs",
   "scripts": {
@@ -39,6 +43,11 @@
     "wait-on": "^8.0.4"
   },
   "build": {
+    "publish": [
+      {
+        "provider": "github"
+      }
+    ],
     "appId": "com.broschpharma.inventory",
     "productName": "BroschPharma Inventory",
     "icon": "src/assets/icon.ico",
